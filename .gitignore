@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+
+# Generated data
+data/output/*
+
+# Test artifacts
+.pytest_cache/
+
+# Operating system
+.DS_Store
+Thumbs.db
