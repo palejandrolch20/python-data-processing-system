@@ -8,7 +8,7 @@ def main() -> None:
 
     reader = FileReader()
 
-    file_path = Path("data/input/production.csv")
+    file_path = Path("data/input/text.txt")
 
     df = reader.read(file_path)
 
