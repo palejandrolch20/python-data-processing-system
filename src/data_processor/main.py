@@ -13,6 +13,7 @@ def main() -> None:
 
     df = reader.read(file_path)
 
+    validator.validate_types(df)
     validator.validate_columns(df)
     
     print("Data Validation Successful!")
