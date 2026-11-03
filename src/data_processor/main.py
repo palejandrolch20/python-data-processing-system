@@ -15,6 +15,7 @@ def main() -> None:
 
     validator.validate_types(df)
     validator.validate_columns(df)
+    validator.validate_business_rules(df)
     
     print("Data Validation Successful!")
     print(df)

@@ -35,7 +35,7 @@ class DataValidator:
 
         return True
         
-    def validate_types(self, df = pd.DataFrame) -> bool :
+    def validate_types(self, df : pd.DataFrame) -> bool :
 
         self.validate_columns(df)
 
@@ -61,6 +61,43 @@ class DataValidator:
         return True
 
 
+    def validate_business_rules(self, df : pd.DataFrame) -> bool:
+        business_errors = []
+
+        #Determinate if any Machine is empty or null
+
+        machine_is_empty = (df["machine"].isna().any() 
+        | df["machine"].str.strip().eq("")).any()
+
+        if machine_is_empty:
+            business_errors.append("Machine cannot be empty or null")
+
+        productions_out_of_range = []
+
+        for value in df["production"]:
+            if (value < 0) :
+                business_errors.append(f"Production cannot be negative: {value}")
+
+        defects_out_of_range = []
+        for value in df["defects"]:
+                    if (value <= 0) :
+                        business_errors.append(f"Production cannot be negative: {value}")
+        
+        efficiency_out_of_range = []
+
+        for value in df["efficiency"]:
+             if (value < 0 or value > 100):
+                  business_errors.append(f"Efficiency must be between 0 and 100: {value}")
+
+
+        if business_errors:
+                    raise ValueError(
+                      f"Business Errors: {business_errors}"
+                 )
+                  
+                  
+                  
+        
 
     
 
