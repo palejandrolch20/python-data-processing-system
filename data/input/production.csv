@@ -1,6 +1,6 @@
 machine,production,defects,efficiency
-Machine A,1200,12,95.5
-Machine B,1500,5,87.3
-Machine C,900,6,92.1
-Machine D,1800,15,96.2
-Machine E,1100,8,89.5
+machine a ,1200,12,95.5
+MACHINE B,1500,5,87.3
+MACHINE B,1500,5,87.3
+Machine C,,6,92.1
+machine d,1800,15,96.2
